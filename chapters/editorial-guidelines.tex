@@ -1,0 +1,150 @@
+\chapter{Editorial and Writing Guidelines}
+
+\section{Purpose and audience}
+
+The project is a shared academic resource for students taking the same university
+modules. It should be readable without access to an editor's private notes and should
+remain useful across different teaching years. The writing must therefore be
+consistent, source-aware, and conservative in its claims.
+
+\section{Required document structure}
+
+Every course should contain the following three parts.
+
+\subsection{Knowledge Notes}
+Organise material according to the official syllabus and the actual teaching order.
+Each chapter should normally contain:
+\begin{enumerate}
+  \item learning objectives;
+  \item definitions and notation;
+  \item main results and methods;
+  \item proofs or derivations required by the module;
+  \item worked examples;
+  \item common errors and examination notes;
+  \item a concise chapter summary.
+\end{enumerate}
+
+\subsection{TTL Materials}
+Each TTL sheet should state its date or number, related topics, and source. Solutions
+should explain the method rather than record only the final answer. When two methods
+are genuinely useful, present the standard method first and the alternative method
+second.
+
+\subsection{Past Papers}
+Each paper must preserve its academic year, assessment type, question numbering, mark
+allocation, and source status. Distinguish carefully among official solutions,
+editorial solutions, reconstructed questions, and unofficial marking guidance.
+
+\section{Language and tone}
+
+\begin{itemize}
+  \item Write primarily in English, using complete sentences and standard academic
+        terminology.
+  \item Prefer direct statements over conversational commentary.
+  \item Avoid first-person narration unless an editorial decision must be explained.
+  \item Define abbreviations at first use. Retain ``TTL'' only if this is the official
+        or commonly accepted course term.
+  \item Do not imitate a lecturer's informal wording when a precise mathematical
+        formulation is available.
+\end{itemize}
+
+\section{Mathematical writing}
+
+\subsection{Definitions and notation}
+Define every nonstandard symbol before use. Use one notation consistently throughout
+the course. If the official lecture notes use conflicting notation, select one system
+for the compiled notes and record the alternative in a remark.
+
+\subsection{Theorems and proofs}
+State all hypotheses explicitly. A proof should identify the main argument and include
+enough intermediate steps for the intended audience. Do not add advanced generality
+unless it improves the course-level explanation.
+
+\subsection{Calculations}
+Align multi-step calculations and justify nontrivial transitions. Numerical answers
+should include units where appropriate. Approximate values should state the rounding
+convention or number of significant figures.
+
+\subsection{Solutions}
+A complete solution should contain:
+\begin{enumerate}
+  \item the relevant method or theorem;
+  \item the essential working;
+  \item the final conclusion in a clearly identifiable form;
+  \item a verification step when it is short and informative.
+\end{enumerate}
+
+\section{Source and accuracy policy}
+
+\begin{itemize}
+  \item Cite the lecture, textbook, TTL sheet, or examination paper from which material
+        is taken.
+  \item Never label an editorial answer as an official solution.
+  \item Mark uncertain transcriptions with \CheckTag\ and resolve them before a stable
+        release.
+  \item Record substantive corrections in the revision history.
+  \item Respect university rules governing the distribution of assessments, model
+        answers, and teaching materials.
+\end{itemize}
+
+\section{Difficulty and relevance labels}
+
+Use labels sparingly and consistently:
+\begin{center}
+\begin{tabular}{ll}
+\CoreTag & required knowledge or a foundational method;\\[3pt]
+\ExamTag & directly relevant to common assessment formats;\\[3pt]
+\ProofTag & a proof that students may be expected to reproduce or adapt;\\[3pt]
+\CalculationTag & a standard computational procedure;\\[3pt]
+\ExtensionTag & useful enrichment beyond the minimum course requirement;\\[3pt]
+\CheckTag & content requiring editorial verification.
+\end{tabular}
+\end{center}
+
+\section{File and folder conventions}
+
+Use stable, descriptive file names without spaces where possible. A recommended course
+folder is:
+\begin{verbatim}
+course-code-course-name/
+  main.tex
+  course-notes.cls
+  frontmatter/
+    revision-history.tex
+  chapters/
+    knowledge-notes.tex
+    ttl-materials.tex
+    past-papers.tex
+  figures/
+  tables/
+  bibliography.bib
+\end{verbatim}
+
+For a large course, split each part into one file per chapter, TTL sheet, or examination
+year. Do not place generated auxiliary files in the source folders.
+
+\section{Editorial workflow}
+
+A stable release should pass the following sequence:
+\begin{enumerate}
+  \item \textbf{Draft}: one editor enters the content and sources;
+  \item \textbf{Mathematical review}: another editor checks definitions, computations,
+        and proofs;
+  \item \textbf{Language review}: notation, terminology, and formatting are normalised;
+  \item \textbf{Source review}: past-paper status and distribution permissions are
+        checked;
+  \item \textbf{Release}: the PDF is compiled, visually inspected, and assigned a
+        version number.
+\end{enumerate}
+
+\section{Use of the template}
+
+Edit only the metadata block in \texttt{main.tex} and the content files under
+\texttt{chapters/}. Global layout changes belong in \texttt{course-notes.cls} and
+should be made centrally rather than copied into individual course projects.
+
+To create a student copy without displayed solutions, use
+\begin{verbatim}
+\documentclass[nosolutions]{course-notes}
+\end{verbatim}
+instead of the default \texttt{solutions} option.

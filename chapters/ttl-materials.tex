@@ -1,0 +1,64 @@
+\chapter{TTL 01: Matrix Methods}
+
+\section{Session information}
+
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\sffamily\color{CourseNavy}}L{35mm}Y@{}}
+TTL number & 01 \\
+Related topics & Linear systems; invertibility; row reduction \\
+Recommended preparation & Read Chapter 1, Sections 1--3 \\
+Suggested completion time & 45--60 minutes \\
+Assessment relevance & Core computational methods \\
+\end{tabularx}
+
+\section{Problems and solutions}
+
+\begin{ttlproblem}{Consistency of a parameter-dependent system}{consistency}
+\probleminfo{Linear systems}{Standard}{TTL 01, Question 1}{8}
+Determine the values of $\lambda\in\R$ for which the system
+\[
+\begin{aligned}
+  x+y &= 1,\\
+  2x+2y &= \lambda
+\end{aligned}
+\]
+is consistent. Describe the solution set in every case.
+\end{ttlproblem}
+
+\begin{coursesolution}
+The second left-hand side is twice the first. Therefore consistency requires the same
+relation on the right-hand sides:
+\[
+  \lambda=2.
+\]
+If $\lambda=2$, the equations are identical and there are infinitely many solutions,
+which may be written as
+\[
+  (x,y)=(t,1-t),\qquad t\in\R.
+\]
+If $\lambda\neq2$, the equations contradict one another and there is no solution.
+\end{coursesolution}
+
+\begin{ttlproblem}{A proof prompt}{kernel}
+\probleminfo{Invertibility}{Standard}{TTL 01, Question 2}{6}
+Let $A\in\R^{n\times n}$. Prove that if $A\bm{x}=\bm{0}$ has a nonzero solution,
+then $A\bm{x}=\bm{b}$ cannot have a unique solution for every $\bm{b}\in\R^n$.
+\end{ttlproblem}
+
+\begin{coursesolution}
+Let $\bm{v}\neq\bm{0}$ satisfy $A\bm{v}=\bm{0}$. Suppose that
+$A\bm{x}=\bm{b}$ has one solution $\bm{x}_0$. Then
+\[
+  A(\bm{x}_0+\bm{v})=A\bm{x}_0+A\bm{v}=\bm{b}.
+\]
+Because $\bm{v}\neq\bm{0}$, the vectors $\bm{x}_0$ and $\bm{x}_0+\bm{v}$ are
+distinct. Hence any solvable system has at least two solutions, so unique solvability
+for every $\bm{b}$ is impossible.
+\end{coursesolution}
+
+\section{TTL review}
+
+\begin{keypoint}[Methods practised]
+This sheet connects three equivalent descriptions of the same phenomenon:
+redundant equations, a nontrivial null space, and failure of uniqueness.
+Students should be able to move between the computational and structural viewpoints.
+\end{keypoint}

@@ -1,0 +1,112 @@
+\chapter{Demonstration Chapter: Linear Systems}
+
+\begin{learningobjectives}
+By the end of this chapter, the reader should be able to:
+\begin{itemize}
+  \item identify a linear system and its coefficient matrix;
+  \item state and use the invertibility criterion for uniqueness;
+  \item distinguish a proof-based result from a computational procedure;
+  \item recognise common algebraic errors in row reduction.
+\end{itemize}
+\end{learningobjectives}
+
+\section{Core definitions}
+
+\begin{definition}[Linear system]\label{def:linear-system}
+A linear system of $m$ equations in $n$ unknowns is an equation of the form
+\[
+  A\bm{x}=\bm{b},
+\]
+where $A\in\R^{m\times n}$ is the coefficient matrix,
+$\bm{x}\in\R^n$ is the vector of unknowns, and $\bm{b}\in\R^m$ is the data vector.
+\end{definition}
+
+\begin{remark}
+Definitions should introduce notation before it is used. If a symbol is local to one
+section, define it locally rather than adding it to the global notation list.
+\end{remark}
+
+\begin{keypoint}
+\CoreTag\quad The equation $A\bm{x}=\bm{b}$ separates the fixed linear map $A$
+from the input $\bm{b}$. This viewpoint is usually more reusable than treating each
+scalar equation independently.
+\end{keypoint}
+
+\section{A representative theorem}
+
+\begin{theorem}[Invertibility and uniqueness]\label{thm:invertibility-uniqueness}
+Let $A\in\R^{n\times n}$. The following statements are equivalent:
+\begin{enumerate}
+  \item $A$ is invertible;
+  \item for every $\bm{b}\in\R^n$, the system $A\bm{x}=\bm{b}$ has a unique solution;
+  \item the homogeneous system $A\bm{x}=\bm{0}$ has only the trivial solution.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Assume first that $A$ is invertible. Then for every $\bm{b}\in\R^n$,
+\[
+  \bm{x}=A^{-1}\bm{b}
+\]
+is a solution, and multiplying any solution by $A^{-1}$ shows that it is unique.
+Hence (1) implies (2).
+
+Statement (2) immediately implies (3) by taking $\bm{b}=\bm{0}$.
+
+Finally, assume (3). Then the linear map $T(\bm{x})=A\bm{x}$ has trivial kernel, so
+$T$ is injective. Since the domain and codomain both have dimension $n$, injectivity
+implies surjectivity. Therefore $T$ is bijective and $A$ is invertible. Thus (3)
+implies (1).
+\end{proof}
+
+\begin{examnote}
+\ExamTag\quad In a proof question, write the logical direction being proved and name
+the finite-dimensional result used in the last step. In a calculation question, it is
+enough to use row reduction or a determinant criterion if the method is justified.
+\end{examnote}
+
+\section{Worked example}
+
+\begin{example}[Solving a two-dimensional system]\label{ex:two-by-two}
+Solve
+\[
+  \begin{pmatrix}
+    2 & 1\\
+    1 & -1
+  \end{pmatrix}
+  \begin{pmatrix}x\\y\end{pmatrix}
+  =
+  \begin{pmatrix}5\\1\end{pmatrix}.
+\]
+\end{example}
+
+\begin{coursesolution}
+The scalar equations are
+\[
+  2x+y=5,
+  \qquad
+  x-y=1.
+\]
+Adding the equations gives $3x=6$, hence $x=2$. Substitution into $x-y=1$ gives
+$y=1$. Therefore
+\[
+  \bm{x}=\begin{pmatrix}2\\1\end{pmatrix}.
+\]
+A direct substitution verifies the result.
+\end{coursesolution}
+
+\begin{commonerror}
+\CheckTag\quad Row operations must be applied to the entire augmented row, including
+the right-hand side. A correct coefficient reduction paired with an unchanged data
+column produces an invalid system.
+\end{commonerror}
+
+\section{Chapter summary}
+
+\begin{itemize}
+  \item A linear system is written compactly as $A\bm{x}=\bm{b}$.
+  \item For square matrices, invertibility is equivalent to unique solvability for every
+        right-hand side.
+  \item Proofs should identify the structural reason for a conclusion; computations
+        should record enough intermediate work to be checked.
+\end{itemize}

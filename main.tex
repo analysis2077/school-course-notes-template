@@ -1,0 +1,41 @@
+% Compile with:
+%   latexmk -xelatex main.tex
+% Add the class option "nosolutions" to produce a student version.
+\documentclass[solutions]{course-notes}
+
+% -----------------------------------------------------------------------------
+% Course metadata: edit this block for each module.
+% -----------------------------------------------------------------------------
+\School{Department of Mathematical Sciences}
+\CourseCode{MTH000}
+\CourseTitle{Sample Course Notes}
+\CourseSubtitle{Knowledge Notes, TTL Solutions, and Past-Paper Archive}
+\AcademicYear{2026--2027}
+\Term{Semester 1}
+\Instructor{Course Teaching Team}
+\Coordinator{Mathematics Society Editorial Group}
+\DocumentVersion{1.0.1}
+\LastUpdated{15 July 2026}
+\CourseLicence{Internal educational use; redistribution subject to source permissions}
+% \CourseWebsite{https://example.edu/course-notes}
+
+\begin{document}
+
+\CourseFrontMatter
+
+\include{frontmatter/revision-history}
+
+\part{Knowledge Notes}
+\include{chapters/knowledge-notes}
+
+\part{TTL Materials}
+\include{chapters/ttl-materials}
+
+\part{Past Papers}
+\include{chapters/past-papers}
+
+\appendix
+\part{Editorial Reference}
+\include{chapters/editorial-guidelines}
+
+\end{document}
